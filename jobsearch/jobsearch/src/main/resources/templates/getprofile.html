@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+
+<body>
+     <body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #14213d;font-weight: bold;height:75px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color:white;" href="/">JobPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-md-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="btn btn-primary rounded-pill" aria-current="page" href="/jobs">Back to jobs</a>
+                    </li>
+                     
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class=" my-5 row d-flex justify-content-center">
+        <div style="border:1px solid #14213d;border-radius:20px;" class="p-5 col-md-5">
+            <h3 class="display-4">User Profile </h3>
+            <div th:if="${message}" th:text="${message}" th:class="${'alert ' + alertClass}"></div>
+            <form method="post" th:object="${candidate}" th:action="@{/profile/edit/{id}(id=${candidate.id})}" autocomplete="off" >
+                
+                 <div th:if="${#fields.hasErrors('*')}" class="alert alert-danger">
+                        There are errors
+                    </div>
+                    
+                <div class="form-group">
+                    <label class="mt-3" for="">Username</label>
+                    <input class="mt-3 form-control" type="text" th:field="*{username}" th:value="${candidate.username}">
+                </div>
+                  <div class="form-group">
+                    <input class="mt-3" type="hidden" th:value="${candidate.password}" name="password" />
+                    </div>
+                    
+               <div class="form-group">
+                        <label class="mt-3" for="">Phone number</label>
+                        <input type="text" class="form-control mt-3"  th:field="*{phoneNumber}" th:value="${candidate.phoneNumber}">
+                        <span class="error" th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></span>
+                    </div>
+                
+                <div class="form-group">
+                        <label  class="mt-3" for="">Address</label>
+                        <input type="text"  class="form-control mt-3"  th:field="*{address}" th:value="${candidate.address}">
+                        <span class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
+                    </div>
+        
+                    <div class="form-group">
+                        <label  class="mt-3" for="">Profession</label>
+                        <input type="text"  class="form-control mt-3"  th:field="*{profession}" th:value="${candidate.profession}">
+                        <span class="error" th:if="${#fields.hasErrors('profession')}" th:errors="*{profession}"></span>
+                    </div>
+                 <div class="form-group">
+                        <label  class="mt-3" for="">Expected Salary</label>
+                        <input type="number" class="form-control mt-3"  th:field="*{salary}" th:value="${candidate.salary}">
+                        <span class="error" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
+                    </div>
+                    
+                <button class="mt-3 btn btn-danger">Save</button>
+                 
+            </form>
+        </div>
+     </div>
+    <div class="d-flex justify-content-between px-5 pt-5 pb-2" style="background-color:#14213d;color:white;">
+        <div class="col-md-4">
+            <h6 style="font-weight: bold;">About Us</h6>
+            <p class="mt-3" style="color:#f5f5f5;text-align:justify">Our vision is to provide meaningful livelihoods to
+                the 23.7 Cr blue
+                collar individuals of India and
+                now the 120 Cr blue collar individuals on this planet. India is the world's largest Blue Collar
+                recruitment market. WorkIndia is India's Largest Blue Collar player by a large margin.</p>
+        </div>
+        <div class="col-md-4">
+            <h6 class="mb-3" style="font-weight: bold;">Quick Links</h6>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p>Main Page</p>
+                    <p>Register</p>
+                </div>
+                <div>
+                    <p>Login</p>
+                    <p>Explore Jobs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            }, 'google_translate_element');
+        }
+    </script>
+    <script>
+        (function () {
+            var gtConstEvalStartTime = new Date();
+            /*
+
+            Copyright The Closure Library Authors.
+            SPDX-License-Identifier: Apache-2.0
+            */
+            var h = this || self,
+                l = /^[\w+/_-]+[=]{0,2}$/,
+                m = null;
+
+            function n(a) {
+                return (a = a.querySelector && a.querySelector("script[nonce]")) && (a = a.nonce || a.getAttribute(
+                    "nonce")) && l.test(a) ? a : ""
+            }
+
+            function p(a, b) {
+                function c() {}
+                c.prototype = b.prototype;
+                a.i = b.prototype;
+                a.prototype = new c;
+                a.prototype.constructor = a;
+                a.h = function (g, f, k) {
+                    for (var e = Array(arguments.length - 2), d = 2; d < arguments.length; d++) e[d - 2] =
+                        arguments[d];
+                    return b.prototype[f].apply(g, e)
+                }
+            }
+
+            function q(a) {
+                return a
+            };
+
+            function r(a) {
+                if (Error.captureStackTrace) Error.captureStackTrace(this, r);
+                else {
+                    var b = Error().stack;
+                    b && (this.stack = b)
+                }
+                a && (this.message = String(a))
+            }
+            p(r, Error);
+            r.prototype.name = "CustomError";
+
+            function u(a, b) {
+                a = a.split("%s");
+                for (var c = "", g = a.length - 1, f = 0; f < g; f++) c += a[f] + (f < b.length ? b[f] : "%s");
+                r.call(this, c + a[g])
+            }
+            p(u, r);
+            u.prototype.name = "AssertionError";
+
+            function v(a, b) {
+                throw new u("Failure" + (a ? ": " + a : ""), Array.prototype.slice.call(arguments, 1));
+            };
+            var w;
+
+            function x(a, b) {
+                this.g = b === y ? a : ""
+            }
+            x.prototype.toString = function () {
+                return this.g + ""
+            };
+            var y = {};
+
+            function z(a) {
+                var b = document.getElementsByTagName("head")[0];
+                b || (b = document.body.parentNode.appendChild(document.createElement("head")));
+                b.appendChild(a)
+            }
+
+            function _loadJs(a) {
+                var b = document;
+                var c = "SCRIPT";
+                "application/xhtml+xml" === b.contentType && (c = c.toLowerCase());
+                c = b.createElement(c);
+                c.type = "text/javascript";
+                c.charset = "UTF-8";
+                if (void 0 === w) {
+                    b = null;
+                    var g = h.trustedTypes;
+                    if (g && g.createPolicy) {
+                        try {
+                            b = g.createPolicy("goog#html", {
+                                createHTML: q,
+                                createScript: q,
+                                createScriptURL: q
+                            })
+                        } catch (t) {
+                            h.console && h.console.error(t.message)
+                        }
+                        w = b
+                    } else w = b
+                }
+                a = (b = w) ? b.createScriptURL(a) : a;
+                a = new x(a, y);
+                a: {
+                    try {
+                        var f = c && c.ownerDocument,
+                            k = f && (f.defaultView || f.parentWindow);
+                        k = k || h;
+                        if (k.Element && k.Location) {
+                            var e = k;
+                            break a
+                        }
+                    } catch (t) {}
+                    e = null
+                }
+                if (e && "undefined" != typeof e.HTMLScriptElement && (!c || !(c instanceof e.HTMLScriptElement) &&
+                        (c instanceof e.Location || c instanceof e.Element))) {
+                    e = typeof c;
+                    if ("object" == e && null != c || "function" == e) try {
+                        var d = c.constructor.displayName || c.constructor.name || Object.prototype.toString
+                            .call(c)
+                    } catch (t) {
+                        d = "<object could not be stringified>"
+                    } else d = void 0 === c ? "undefined" : null === c ? "null" : typeof c;
+                    v("Argument is not a %s (or a non-Element, non-Location mock); got: %s",
+                        "HTMLScriptElement", d)
+                }
+                a instanceof x && a.constructor === x ? d = a.g : (d = typeof a, v(
+                        "expected object of type TrustedResourceUrl, got '" + a + "' of type " + ("object" !=
+                            d ? d : a ? Array.isArray(a) ? "array" : d : "null")), d =
+                    "type_error:TrustedResourceUrl");
+                c.src = d;
+                (d = c.ownerDocument && c.ownerDocument.defaultView) && d != h ? d = n(d.document) : (null === m &&
+                    (m = n(h.document)), d = m);
+                d && c.setAttribute("nonce", d);
+                z(c)
+            }
+
+            function _loadCss(a) {
+                var b = document.createElement("link");
+                b.type = "text/css";
+                b.rel = "stylesheet";
+                b.charset = "UTF-8";
+                b.href = a;
+                z(b)
+            }
+
+            function _isNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c)
+                    if (!(b = b[a[c]])) return !1;
+                return !0
+            }
+
+            function _setupNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c) b.hasOwnProperty ? b.hasOwnProperty(a[c]) ? b = b[a[
+                    c]] : b = b[a[c]] = {} : b = b[a[c]] || (b[a[c]] = {});
+                return b
+            }
+            window.addEventListener && "undefined" == typeof document.readyState && window.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    document.readyState = "complete"
+                }, !1);
+            if (_isNS('google.translate.Element')) {
+                return
+            }(function () {
+                var c = _setupNS('google.translate._const');
+                c._cest = gtConstEvalStartTime;
+                gtConstEvalStartTime = undefined;
+                c._cl = 'en';
+                c._cuc = 'googleTranslateElementInit';
+                c._cac = '';
+                c._cam = '';
+                c._ctkk = '448074.981758691';
+                var h = 'translate.googleapis.com';
+                var s = (true ? 'https' : window.location.protocol == 'https:' ? 'https' : 'http') + '://';
+                var b = s + h;
+                c._pah = h;
+                c._pas = s;
+                c._pbi = b + '/translate_static/img/te_bk.gif';
+                c._pci = b + '/translate_static/img/te_ctrl3.gif';
+                c._pli = b + '/translate_static/img/loading.gif';
+                c._plla = h + '/translate_a/l';
+                c._pmi = b + '/translate_static/img/mini_google.png';
+                c._ps = b + '/translate_static/css/translateelement.css';
+                c._puh = 'translate.google.com';
+                _loadCss(c._ps);
+                _loadJs(b + '/translate_static/js/element/main.js');
+            })();
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

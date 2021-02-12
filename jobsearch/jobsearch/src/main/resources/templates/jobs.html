@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Show Jobs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg" style="background-color: #14213d;font-weight: bold;height:75px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color:white;" href="/">JobPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-md-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="btn btn-primary rounded-pill" aria-current="page" href="/create-job-post">Create a job post</a>
+                    </li>
+       <li class="nav-item mx-4">
+                    <div class="dropdown">
+                   <button class="btn btn-danger rounded-pill dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                 Profile
+                 </button>
+
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    <li><a class="dropdown-item btn btn-danger rounded-pill" th:href="@{'/profile/edit/'+${user.id}}">Edit Profile</a></li>
+    <li><a class="dropdown-item btn btn-danger rounded-pill" th:href="@{'/profile/view/'+${user.id}}">View Profile</a></li>
+    <li><a class="dropdown-item btn btn-danger rounded-pill" id="logout" th:href ="@{/logout}">Logout</a></li>
+     
+  </ul>
+</div>
+          </li>          
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="w-100 d-flex justify-content-center my-4">
+        <form method="post" th:action="@{/search}" class="w-50 d-flex" autocomplete="off">
+            <label class="align-self-center" for="">Search Jobs : </label>
+            <input class="form-control mx-3" style="width:400px" type="text" th:name="str">
+            <button class="btn btn-primary">Search</button>
+        </form>
+    </div>
+    <h2 class="display-3 mb-5 text-center">All Jobs</h2>
+    <div class="row mt-5 px-3">
+        <div class="col-md-6" th:each="jobPost : (${filteredPosts}==null)? ${listOfPosts} : ${filteredPosts}">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title text-center" th:text="${jobPost.workSkill}+' Required'" ></h5>
+                    <div class="d-flex">
+                        <div class="mx-2">
+                            <svg enable-background="new 0 0 32 32" height="15px" id="Layer_1" version="1.1"
+                                viewBox="0 0 32 32" width="15px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g id="location">
+                                    <path clip-rule="evenodd"
+                                        d="M16.002,17.746c3.309,0,6-2.692,6-6s-2.691-6-6-6   c-3.309,0-6,2.691-6,6S12.693,17.746,16.002,17.746z M16.002,6.746c2.758,0,5,2.242,5,5s-2.242,5-5,5c-2.758,0-5-2.242-5-5   S13.244,6.746,16.002,6.746z"
+                                        fill="#333333" fill-rule="evenodd" />
+                                    <path clip-rule="evenodd"
+                                        d="M16,0C9.382,0,4,5.316,4,12.001c0,7,6.001,14.161,10.376,19.194   C14.392,31.215,15.094,32,15.962,32c0.002,0,0.073,0,0.077,0c0.867,0,1.57-0.785,1.586-0.805   c4.377-5.033,10.377-12.193,10.377-19.194C28.002,5.316,22.619,0,16,0z M16.117,29.883c-0.021,0.02-0.082,0.064-0.135,0.098   c-0.01-0.027-0.084-0.086-0.129-0.133C12.188,25.631,6,18.514,6,12.001C6,6.487,10.487,2,16,2c5.516,0,10.002,4.487,10.002,10.002   C26.002,18.514,19.814,25.631,16.117,29.883z"
+                                        fill="#333333" fill-rule="evenodd" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="card-text" th:text="'Location: '+${jobPost.location}" ></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="mx-2">
+                            <svg id="Layer_1" height="20px" style="enable-background:new 0 0 100.4 100.4;" version="1.1"
+                                viewBox="0 0 100.4 100.4" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <g>
+                                    <path
+                                        d="M56.6,16.5v-4.4h4.1c0.8,0,1.5-0.7,1.5-1.5V3.4c0-0.8-0.7-1.5-1.5-1.5H43.2c-0.8,0-1.5,0.7-1.5,1.5v7.2   c0,0.8,0.7,1.5,1.5,1.5h4.1v4.4c-9.7,1.1-18.3,5.6-24.8,12.2L20.8,27l2.8-2.8c0.6-0.6,0.6-1.5,0-2.1l-5.8-5.8   c-0.6-0.6-1.5-0.6-2.1,0L7.8,24c-0.6,0.6-0.6,1.5,0,2.1l5.8,5.8c0.3,0.3,0.7,0.4,1.1,0.4s0.8-0.1,1.1-0.4l2.9-2.9l1.9,1.9   C14.6,38,11,47.2,11,57.2c0,22.6,18.4,41,41,41s41-18.4,41-41C92.9,36.2,77,18.8,56.6,16.5z M14.7,28.8L11,25l5.6-5.6l3.7,3.7   l-2.2,2.2c-0.3,0.3-0.7,0.7-1.1,1.1L14.7,28.8z M48.8,9.1h-4.1V4.9h14.5v4.2h-4.1c-0.8,0-1.5,0.7-1.5,1.5v5.7c-0.5,0-1.1,0-1.6,0   s-1.1,0-1.6,0v-5.7C50.3,9.7,49.6,9.1,48.8,9.1z M51.9,95.2c-20.9,0-38-17-38-38s17-38,38-38c0.8,0,1.6,0,2.4,0.1   c0.4,0,0.8,0.1,1.2,0.1c19.3,1.8,34.4,18.1,34.4,37.8C89.9,78.2,72.9,95.2,51.9,95.2z" />
+                                    <path
+                                        d="M73.5,32.6c-0.1-0.1-0.2-0.2-0.3-0.3c-5.7-4.9-13.1-7.8-21.2-7.8c-18.1,0-32.7,14.7-32.7,32.7S33.9,90,51.9,90   s32.7-14.7,32.7-32.7C84.7,47.4,80.3,38.6,73.5,32.6z M51.9,87c-16.4,0-29.7-13.3-29.7-29.7s13.3-29.7,29.7-29.7   c6.9,0,13.2,2.4,18.2,6.3L53.9,52.5c-0.6-0.2-1.3-0.4-1.9-0.4c-2.8,0-5.1,2.3-5.1,5.1s2.3,5.1,5.1,5.1s5-2.3,5-5.1   c0-1-0.3-2-0.8-2.8l16.3-18.7c5.7,5.4,9.2,13,9.2,21.5C81.7,73.6,68.3,87,51.9,87z M54,57.2c0,1.2-0.9,2.1-2.1,2.1   s-2.1-0.9-2.1-2.1c0-1.1,0.9-2.1,2.1-2.1S54,56.1,54,57.2z" />
+                                </g>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="card-text" th:text="'Time: '+ ${jobPost.timePeriod}" ></p>
+                        </div>
+                    </div>
+                    <div class="d-flex">
+                        <div class="mx-2">
+                            <svg height="20px" viewBox="0 0 1792 1792" width="20px" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M1345 470v102q0 14-9 23t-23 9h-168q-23 144-129 234t-276 110q167 178 459 536 14 16 4 34-8 18-29 18h-195q-16 0-25-12-306-367-498-571-9-9-9-22v-127q0-13 9.5-22.5t22.5-9.5h112q132 0 212.5-43t102.5-125h-427q-14 0-23-9t-9-23v-102q0-14 9-23t23-9h413q-57-113-268-113h-145q-13 0-22.5-9.5t-9.5-22.5v-133q0-14 9-23t23-9h832q14 0 23 9t9 23v102q0 14-9 23t-23 9h-233q47 61 64 144h171q14 0 23 9t9 23z" />
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="card-text" th:text="'Pay: '+ ${jobPost.salary} + '/month'" ></p>
+                        </div>
+                    </div>
+                    <a th:href="@{'tel:'+${jobPost.phonenumber}}" class="btn btn-primary w-100 mt-3">Apply</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="d-flex justify-content-between px-5 pt-5 pb-2" style="background-color:#14213d;color:white;">
+        <div class="col-md-4">
+            <h6 style="font-weight: bold;">About Us</h6>
+            <p class="mt-3" style="color:#f5f5f5;text-align:justify">Our vision is to provide meaningful livelihoods to
+                the 23.7 Cr blue
+                collar individuals of India and
+                now the 120 Cr blue collar individuals on this planet. India is the world's largest Blue Collar
+                recruitment market. WorkIndia is India's Largest Blue Collar player by a large margin.</p>
+        </div>
+        <div class="col-md-4">
+            <h6 class="mb-3" style="font-weight: bold;">Quick Links</h6>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p>Main Page</p>
+                    <p>Register</p>
+                </div>
+                <div>
+                    <p>Login</p>
+                    <p>Explore Jobs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            }, 'google_translate_element');
+        }
+    </script>
+    <script>
+        (function () {
+            var gtConstEvalStartTime = new Date();
+            /*
+
+            Copyright The Closure Library Authors.
+            SPDX-License-Identifier: Apache-2.0
+            */
+            var h = this || self,
+                l = /^[\w+/_-]+[=]{0,2}$/,
+                m = null;
+
+            function n(a) {
+                return (a = a.querySelector && a.querySelector("script[nonce]")) && (a = a.nonce || a.getAttribute(
+                    "nonce")) && l.test(a) ? a : ""
+            }
+
+            function p(a, b) {
+                function c() {}
+                c.prototype = b.prototype;
+                a.i = b.prototype;
+                a.prototype = new c;
+                a.prototype.constructor = a;
+                a.h = function (g, f, k) {
+                    for (var e = Array(arguments.length - 2), d = 2; d < arguments.length; d++) e[d - 2] =
+                        arguments[d];
+                    return b.prototype[f].apply(g, e)
+                }
+            }
+
+            function q(a) {
+                return a
+            };
+
+            function r(a) {
+                if (Error.captureStackTrace) Error.captureStackTrace(this, r);
+                else {
+                    var b = Error().stack;
+                    b && (this.stack = b)
+                }
+                a && (this.message = String(a))
+            }
+            p(r, Error);
+            r.prototype.name = "CustomError";
+
+            function u(a, b) {
+                a = a.split("%s");
+                for (var c = "", g = a.length - 1, f = 0; f < g; f++) c += a[f] + (f < b.length ? b[f] : "%s");
+                r.call(this, c + a[g])
+            }
+            p(u, r);
+            u.prototype.name = "AssertionError";
+
+            function v(a, b) {
+                throw new u("Failure" + (a ? ": " + a : ""), Array.prototype.slice.call(arguments, 1));
+            };
+            var w;
+
+            function x(a, b) {
+                this.g = b === y ? a : ""
+            }
+            x.prototype.toString = function () {
+                return this.g + ""
+            };
+            var y = {};
+
+            function z(a) {
+                var b = document.getElementsByTagName("head")[0];
+                b || (b = document.body.parentNode.appendChild(document.createElement("head")));
+                b.appendChild(a)
+            }
+
+            function _loadJs(a) {
+                var b = document;
+                var c = "SCRIPT";
+                "application/xhtml+xml" === b.contentType && (c = c.toLowerCase());
+                c = b.createElement(c);
+                c.type = "text/javascript";
+                c.charset = "UTF-8";
+                if (void 0 === w) {
+                    b = null;
+                    var g = h.trustedTypes;
+                    if (g && g.createPolicy) {
+                        try {
+                            b = g.createPolicy("goog#html", {
+                                createHTML: q,
+                                createScript: q,
+                                createScriptURL: q
+                            })
+                        } catch (t) {
+                            h.console && h.console.error(t.message)
+                        }
+                        w = b
+                    } else w = b
+                }
+                a = (b = w) ? b.createScriptURL(a) : a;
+                a = new x(a, y);
+                a: {
+                    try {
+                        var f = c && c.ownerDocument,
+                            k = f && (f.defaultView || f.parentWindow);
+                        k = k || h;
+                        if (k.Element && k.Location) {
+                            var e = k;
+                            break a
+                        }
+                    } catch (t) {}
+                    e = null
+                }
+                if (e && "undefined" != typeof e.HTMLScriptElement && (!c || !(c instanceof e.HTMLScriptElement) &&
+                        (c instanceof e.Location || c instanceof e.Element))) {
+                    e = typeof c;
+                    if ("object" == e && null != c || "function" == e) try {
+                        var d = c.constructor.displayName || c.constructor.name || Object.prototype.toString
+                            .call(c)
+                    } catch (t) {
+                        d = "<object could not be stringified>"
+                    } else d = void 0 === c ? "undefined" : null === c ? "null" : typeof c;
+                    v("Argument is not a %s (or a non-Element, non-Location mock); got: %s",
+                        "HTMLScriptElement", d)
+                }
+                a instanceof x && a.constructor === x ? d = a.g : (d = typeof a, v(
+                        "expected object of type TrustedResourceUrl, got '" + a + "' of type " + ("object" !=
+                            d ? d : a ? Array.isArray(a) ? "array" : d : "null")), d =
+                    "type_error:TrustedResourceUrl");
+                c.src = d;
+                (d = c.ownerDocument && c.ownerDocument.defaultView) && d != h ? d = n(d.document) : (null === m &&
+                    (m = n(h.document)), d = m);
+                d && c.setAttribute("nonce", d);
+                z(c)
+            }
+
+            function _loadCss(a) {
+                var b = document.createElement("link");
+                b.type = "text/css";
+                b.rel = "stylesheet";
+                b.charset = "UTF-8";
+                b.href = a;
+                z(b)
+            }
+
+            function _isNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c)
+                    if (!(b = b[a[c]])) return !1;
+                return !0
+            }
+
+            function _setupNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c) b.hasOwnProperty ? b.hasOwnProperty(a[c]) ? b = b[a[
+                    c]] : b = b[a[c]] = {} : b = b[a[c]] || (b[a[c]] = {});
+                return b
+            }
+            window.addEventListener && "undefined" == typeof document.readyState && window.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    document.readyState = "complete"
+                }, !1);
+            if (_isNS('google.translate.Element')) {
+                return
+            }(function () {
+                var c = _setupNS('google.translate._const');
+                c._cest = gtConstEvalStartTime;
+                gtConstEvalStartTime = undefined;
+                c._cl = 'en';
+                c._cuc = 'googleTranslateElementInit';
+                c._cac = '';
+                c._cam = '';
+                c._ctkk = '448074.981758691';
+                var h = 'translate.googleapis.com';
+                var s = (true ? 'https' : window.location.protocol == 'https:' ? 'https' : 'http') + '://';
+                var b = s + h;
+                c._pah = h;
+                c._pas = s;
+                c._pbi = b + '/translate_static/img/te_bk.gif';
+                c._pci = b + '/translate_static/img/te_ctrl3.gif';
+                c._pli = b + '/translate_static/img/loading.gif';
+                c._plla = h + '/translate_a/l';
+                c._pmi = b + '/translate_static/img/mini_google.png';
+                c._ps = b + '/translate_static/css/translateelement.css';
+                c._puh = 'translate.google.com';
+                _loadCss(c._ps);
+                _loadJs(b + '/translate_static/js/element/main.js');
+            })();
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>

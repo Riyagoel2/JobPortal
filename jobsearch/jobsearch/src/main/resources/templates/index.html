@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Main Page</title>
+    <style>
+        body {
+            background-color: #E8F1F2;
+        }
+
+        .mainpics {
+            height: 40vh;
+            width: 25vw;
+            margin: 0;
+            padding: 0;
+            border-radius: 50px;
+        }
+
+        img:hover {
+          opacity: 80%;
+	 
+
+                  }
+    </style>
+</head>
+
+<body style="background-color: white;color: #14213d;">
+    <nav class="navbar navbar-expand-lg" style="background-color: #14213d;font-weight: bold;height:75px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" style="color:white;" href="/">JobPortal</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-md-flex justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item mx-4">
+                        <a class="btn btn-primary rounded-pill" aria-current="page" href="/login">Log In</a>
+                    </li>
+                    <li class="nav-item mx-4">
+                        <a class="btn btn-danger rounded-pill" href="/register">Sign Up</a>
+                    </li>
+                </ul>
+                <div id="google_translate_element"></div>
+            </div>
+        </div>
+    </nav>
+    <div class="my-5 d-flex justify-content-center">
+        <h1>India's Largest Platform for Blue Collared Workers</h1>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/1.jpeg" alt="">
+            </div>
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/2.jpeg" alt="">
+            </div>
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/3.jpeg" alt="">
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/4.jpeg" alt="">
+            </div>
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/5.jpeg" alt="">
+            </div>
+            <div class="col-md-4">
+                <img class="mainpics" src="/media/6.jpeg" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="m-5 p-5 d-flex justify-content-center">
+        <h1>Follow These 3 Simple Steps :</h1>
+    </div>
+    <div class="d-md-flex align-items-center justify-content-around mb-5">
+        <div class="card" style="width: 15rem;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <svg width="100" height="100" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="60" cy="59.5" rx="60" ry="59.5" fill="#11270B" />
+                    <path
+                        d="M93.4688 68.3906C92.625 72.6719 91.5469 76.2031 90.2344 78.9844C88.9219 81.7344 87.5938 83.9062 86.25 85.5C84.9062 87.0938 83.6406 88.2031 82.4531 88.8281C81.2969 89.4531 80.4219 89.7656 79.8281 89.7656C78.8906 89.7656 77.6875 89.3594 76.2188 88.5469C74.75 87.7344 73.125 86.6875 71.3438 85.4062C69.5938 84.125 67.7656 82.6875 65.8594 81.0938C63.9844 79.4688 62.1719 77.8594 60.4219 76.2656C58.6719 74.6719 57.0625 73.1719 55.5938 71.7656C54.125 70.3594 52.9375 69.2031 52.0312 68.2969L52.4062 79.875L62.2969 85.3594L32.5312 87.4688L42.5156 78.2812L44.25 31.125L32.0625 25.2656C38.1562 24.9219 43.3281 24.6719 47.5781 24.5156C51.8281 24.3281 55.3438 24.2031 58.125 24.1406C60.9062 24.0781 63.0469 24.0469 64.5469 24.0469C66.0469 24.0469 67.1094 24.0469 67.7344 24.0469C69.0781 24.0469 70.5312 24.1719 72.0938 24.4219C73.6875 24.6406 75.2656 25.0312 76.8281 25.5938C78.3906 26.125 79.9062 26.8125 81.375 27.6562C82.8438 28.5 84.1406 29.5312 85.2656 30.75C86.3906 31.9688 87.2812 33.3906 87.9375 35.0156C88.625 36.6094 88.9688 38.4219 88.9688 40.4531C88.9688 40.9219 88.9062 41.5781 88.7812 42.4219C88.6875 43.2344 88.4688 44.1875 88.125 45.2812C87.7812 46.3438 87.2656 47.4844 86.5781 48.7031C85.8906 49.8906 84.9531 51.0938 83.7656 52.3125C82.6094 53.5 81.1719 54.6562 79.4531 55.7812C77.7344 56.9062 75.6562 57.9062 73.2188 58.7812C70.8125 59.6562 68 60.375 64.7812 60.9375C61.5938 61.4688 57.9375 61.7656 53.8125 61.8281C55.8438 63.3594 58.0469 65 60.4219 66.75C62.7969 68.4688 65.2031 70.0625 67.6406 71.5312C70.0781 72.9688 72.4688 74.1719 74.8125 75.1406C77.1562 76.0781 79.3438 76.5469 81.375 76.5469C82.3438 76.5469 83.375 76.4375 84.4688 76.2188C85.5938 76 86.6875 75.5938 87.75 75C88.8438 74.375 89.875 73.5469 90.8438 72.5156C91.8438 71.4531 92.7188 70.0781 93.4688 68.3906ZM75.4219 42.6562C75.4219 41.6875 75.3438 40.7188 75.1875 39.75C75.0312 38.7812 74.7031 37.8594 74.2031 36.9844C73.7031 36.1094 72.9844 35.2812 72.0469 34.5C71.1094 33.7188 69.8438 33.0469 68.25 32.4844C66.6875 31.9219 64.75 31.4844 62.4375 31.1719C60.125 30.8281 57.3594 30.6562 54.1406 30.6562C53.6406 30.6562 53.1562 30.6562 52.6875 30.6562C52.2188 30.6562 51.7344 30.6875 51.2344 30.75L51.7031 55.7812C53.6719 55.75 55.625 55.5938 57.5625 55.3125C59.5 55 61.3438 54.5781 63.0938 54.0469C64.8438 53.5156 66.4688 52.875 67.9688 52.125C69.5 51.375 70.8125 50.5312 71.9062 49.5938C73 48.625 73.8594 47.5625 74.4844 46.4062C75.1094 45.25 75.4219 44 75.4219 42.6562Z"
+                        fill="white" />
+                </svg>
+
+                <h5 class="card-title text-center mt-3">Create An Account</h5>
+                <a href="/register" class="btn btn-success mt-3">Register</a>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <svg width="100" height="100" viewBox="0 0 130 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="65" cy="59.5" rx="65" ry="59.5" fill="#28080A" />
+                    <path
+                        d="M95.4062 84.8906L41.5469 87L53.4531 76.6406L56.2656 31.3125L43.375 24.6094L74.5938 22.5938L64.7031 29.2969L65.2656 76.8281L86.9688 79.5L95.4062 63.6562V84.8906Z"
+                        fill="white" />
+                </svg>
+                <h5 class="card-title text-center mt-3">Log In Your Account</h5>
+                <a href="/login" class="btn btn-warning mt-3">Log In</a>
+            </div>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <div class="card-body d-flex flex-column align-items-center">
+                <svg width="100" height="100" viewBox="0 0 120 119" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <ellipse cx="60" cy="59.5" rx="60" ry="59.5" fill="#031A6B" />
+                    <path
+                        d="M84.5625 85.2656L31.7344 87.375L43.4531 75.375L46.7344 32.2031L32.625 25.2656L82.8281 21.7031L83.6719 43.6875L74.9531 28.0781L53.5312 31.5L54.2344 53.6719L59.1094 53.0156L68.8125 40.1719L69.4688 69.7031L61.0312 57.6094L54.3281 58.5938L54.8906 77.9531L75.8906 79.875L83.7656 60.2344L84.5625 85.2656Z"
+                        fill="white" />
+                </svg>
+                <h5 class="card-title mt-3">Explore Jobs</h5>
+                <a href="/jobs" class="btn btn-primary mt-3">See Jobs</a>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-between px-5 pt-5 pb-2" style="background-color:#14213d;color:white;">
+        <div class="col-md-4">
+            <h6 style="font-weight: bold;">About Us</h6>
+            <p class="mt-3" style="color:#f5f5f5;text-align:justify">Our vision is to provide meaningful livelihoods to the 23.7 Cr blue
+                collar individuals of India and
+                now the 120 Cr blue collar individuals on this planet. India is the world's largest Blue Collar
+                recruitment market. WorkIndia is India's Largest Blue Collar player by a large margin.</p>
+        </div>
+        <div class="col-md-4">
+            <h6 class="mb-3" style="font-weight: bold;">Quick Links</h6>
+            <div class="d-flex justify-content-between">
+                <div>
+                    <p>Main Page</p>
+                    <p>Register</p>
+                </div>
+                <div>
+                    <p>Login</p>
+                    <p>Explore Jobs</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            }, 'google_translate_element');
+        }
+    </script>
+    <script>
+        (function () {
+            var gtConstEvalStartTime = new Date();
+            /*
+
+            Copyright The Closure Library Authors.
+            SPDX-License-Identifier: Apache-2.0
+            */
+            var h = this || self,
+                l = /^[\w+/_-]+[=]{0,2}$/,
+                m = null;
+
+            function n(a) {
+                return (a = a.querySelector && a.querySelector("script[nonce]")) && (a = a.nonce || a.getAttribute(
+                    "nonce")) && l.test(a) ? a : ""
+            }
+
+            function p(a, b) {
+                function c() {}
+                c.prototype = b.prototype;
+                a.i = b.prototype;
+                a.prototype = new c;
+                a.prototype.constructor = a;
+                a.h = function (g, f, k) {
+                    for (var e = Array(arguments.length - 2), d = 2; d < arguments.length; d++) e[d - 2] =
+                        arguments[d];
+                    return b.prototype[f].apply(g, e)
+                }
+            }
+
+            function q(a) {
+                return a
+            };
+
+            function r(a) {
+                if (Error.captureStackTrace) Error.captureStackTrace(this, r);
+                else {
+                    var b = Error().stack;
+                    b && (this.stack = b)
+                }
+                a && (this.message = String(a))
+            }
+            p(r, Error);
+            r.prototype.name = "CustomError";
+
+            function u(a, b) {
+                a = a.split("%s");
+                for (var c = "", g = a.length - 1, f = 0; f < g; f++) c += a[f] + (f < b.length ? b[f] : "%s");
+                r.call(this, c + a[g])
+            }
+            p(u, r);
+            u.prototype.name = "AssertionError";
+
+            function v(a, b) {
+                throw new u("Failure" + (a ? ": " + a : ""), Array.prototype.slice.call(arguments, 1));
+            };
+            var w;
+
+            function x(a, b) {
+                this.g = b === y ? a : ""
+            }
+            x.prototype.toString = function () {
+                return this.g + ""
+            };
+            var y = {};
+
+            function z(a) {
+                var b = document.getElementsByTagName("head")[0];
+                b || (b = document.body.parentNode.appendChild(document.createElement("head")));
+                b.appendChild(a)
+            }
+
+            function _loadJs(a) {
+                var b = document;
+                var c = "SCRIPT";
+                "application/xhtml+xml" === b.contentType && (c = c.toLowerCase());
+                c = b.createElement(c);
+                c.type = "text/javascript";
+                c.charset = "UTF-8";
+                if (void 0 === w) {
+                    b = null;
+                    var g = h.trustedTypes;
+                    if (g && g.createPolicy) {
+                        try {
+                            b = g.createPolicy("goog#html", {
+                                createHTML: q,
+                                createScript: q,
+                                createScriptURL: q
+                            })
+                        } catch (t) {
+                            h.console && h.console.error(t.message)
+                        }
+                        w = b
+                    } else w = b
+                }
+                a = (b = w) ? b.createScriptURL(a) : a;
+                a = new x(a, y);
+                a: {
+                    try {
+                        var f = c && c.ownerDocument,
+                            k = f && (f.defaultView || f.parentWindow);
+                        k = k || h;
+                        if (k.Element && k.Location) {
+                            var e = k;
+                            break a
+                        }
+                    } catch (t) {}
+                    e = null
+                }
+                if (e && "undefined" != typeof e.HTMLScriptElement && (!c || !(c instanceof e.HTMLScriptElement) &&
+                        (c instanceof e.Location || c instanceof e.Element))) {
+                    e = typeof c;
+                    if ("object" == e && null != c || "function" == e) try {
+                        var d = c.constructor.displayName || c.constructor.name || Object.prototype.toString
+                            .call(c)
+                    } catch (t) {
+                        d = "<object could not be stringified>"
+                    } else d = void 0 === c ? "undefined" : null === c ? "null" : typeof c;
+                    v("Argument is not a %s (or a non-Element, non-Location mock); got: %s",
+                        "HTMLScriptElement", d)
+                }
+                a instanceof x && a.constructor === x ? d = a.g : (d = typeof a, v(
+                        "expected object of type TrustedResourceUrl, got '" + a + "' of type " + ("object" !=
+                            d ? d : a ? Array.isArray(a) ? "array" : d : "null")), d =
+                    "type_error:TrustedResourceUrl");
+                c.src = d;
+                (d = c.ownerDocument && c.ownerDocument.defaultView) && d != h ? d = n(d.document) : (null === m &&
+                    (m = n(h.document)), d = m);
+                d && c.setAttribute("nonce", d);
+                z(c)
+            }
+
+            function _loadCss(a) {
+                var b = document.createElement("link");
+                b.type = "text/css";
+                b.rel = "stylesheet";
+                b.charset = "UTF-8";
+                b.href = a;
+                z(b)
+            }
+
+            function _isNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c)
+                    if (!(b = b[a[c]])) return !1;
+                return !0
+            }
+
+            function _setupNS(a) {
+                a = a.split(".");
+                for (var b = window, c = 0; c < a.length; ++c) b.hasOwnProperty ? b.hasOwnProperty(a[c]) ? b = b[a[
+                    c]] : b = b[a[c]] = {} : b = b[a[c]] || (b[a[c]] = {});
+                return b
+            }
+            window.addEventListener && "undefined" == typeof document.readyState && window.addEventListener(
+                "DOMContentLoaded",
+                function () {
+                    document.readyState = "complete"
+                }, !1);
+            if (_isNS('google.translate.Element')) {
+                return
+            }(function () {
+                var c = _setupNS('google.translate._const');
+                c._cest = gtConstEvalStartTime;
+                gtConstEvalStartTime = undefined;
+                c._cl = 'en';
+                c._cuc = 'googleTranslateElementInit';
+                c._cac = '';
+                c._cam = '';
+                c._ctkk = '448074.981758691';
+                var h = 'translate.googleapis.com';
+                var s = (true ? 'https' : window.location.protocol == 'https:' ? 'https' : 'http') + '://';
+                var b = s + h;
+                c._pah = h;
+                c._pas = s;
+                c._pbi = b + '/translate_static/img/te_bk.gif';
+                c._pci = b + '/translate_static/img/te_ctrl3.gif';
+                c._pli = b + '/translate_static/img/loading.gif';
+                c._plla = h + '/translate_a/l';
+                c._pmi = b + '/translate_static/img/mini_google.png';
+                c._ps = b + '/translate_static/css/translateelement.css';
+                c._puh = 'translate.google.com';
+                _loadCss(c._ps);
+                _loadJs(b + '/translate_static/js/element/main.js');
+            })();
+        })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"
+        integrity="sha384-q2kxQ16AaE6UbzuKqyBE9/u/KzioAlnx2maXQHiDX9d4/zp8Ok3f+M7DPm+Ib6IU" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.min.js"
+        integrity="sha384-pQQkAEnwaBkjpqZ8RU1fF1AKtTcHJwFl3pblpTlHXybJjHpMYo79HY3hIi4NKxyj" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
